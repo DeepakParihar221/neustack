@@ -1,0 +1,8 @@
+[
+    {
+        "orderId": 101,
+        "orderAmount": 100,
+        "userId": 101,
+        "discountId": 101
+    }
+]

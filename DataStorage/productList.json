@@ -1,0 +1,10 @@
+[
+    {
+        "productId": 101,
+        "productName": "Bag",
+        "price": 100,
+        "inStock": 10,
+        "descrption": ""
+        
+    }
+]
