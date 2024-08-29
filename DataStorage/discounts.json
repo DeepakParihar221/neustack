@@ -1,8 +1,7 @@
 [
     {
         "discountId": 101,
-        "couponCode": "ABC100",
-        "userId": 101,
-        "dicountAmount": 0
+        "discountCode": "ABC100",
+        "userId": 101
     }
 ]

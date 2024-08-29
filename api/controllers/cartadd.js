@@ -1,5 +1,3 @@
-import { log } from 'console';
-
 const fs = require('fs');
 
 export const test =  (req,res) => {  
@@ -30,9 +28,81 @@ function writeJsonFile(filePath, data) {
 }
 
 
+//function to simulate order counting
+function getOrderCount() {
+    try{
+        // Read the orders data
+        const orderList = readJsonFile('../../orders.json');
+
+        // Count the number of orders
+        const userOrders = orderList.length;
+        if(userOrders.length<=0) return 0;
+        return userOrders.length;
+    }
+    catch(err){
+        console.log(err.message);
+    }
+}
+
+// Function to generate a discount code
+//params -> userId
+export const generateDiscountCode = (req, res) => {
+    try{
+        let count = getOrderCount();
+        let filePath = $`../../discounts.json`;
+        const discountList = readJsonFile(filePath);
+        let discountCode = "";
+        //assuming n=5, so for every 5th order,user gets discountCode
+        if(count%5===0)
+        discountCode= uuid.v4().substring(0, 8).toUpperCase(); // Example: 'E5F8A2D4'
+        
+        let discount = {
+            discountId: discountList.length + 101,
+            discountCode: discountCode,
+            userId: userId
+        }
+        discountList.push(discount);
+        if(discountList){
+            writeJsonFile(filePath, discountList);
+        }
+
+        return discountList.length + 101;
+    }
+    catch(err){
+        console.log(err.message);
+    }
+}
+
+
+//save the order for future reference of the order count
+function saveOrder(userId, discountId, orderAmount){
+    try{
+        let filePath = $`../../orders.json`;
+        const orderList = readJsonFile(filePath);
+        let discountAmount = 0;
+        if(discountId!="" && discountId!=null){
+            discountAmount = (orderAmount/10);
+        }
+        let order = {
+            orderId: orderList.length + 101,
+            orderAmount,
+            userId,
+            discountId,
+            discountAmount : discountAmount
+        }
+        orderList.push(order);
+        if(orderList)
+            writeJsonFile(filePath, orderList);
+    }
+    catch(err){
+        console.log(err.message);
+    }
+}
+
 //req params -> userId, productId, productAmount
 export const addToCart = (req, res) => {
-    let cartList = readJsonFile('../../cartList.json');
+    let filePath = $`../../cartList.json`
+    let cartList = readJsonFile(filePath);
     try{
         let userCart = cartList.find(cart => cart.userId==req.userId);
         if(userCart){
@@ -48,7 +118,7 @@ export const addToCart = (req, res) => {
         }
         else{
             //adding a new cart for the userId if cart not found
-            cart = {
+            let cart = {
                 cartId: cartList.length + 101,  // Generating a new cart ID
                 userId: userId,
                 cartAmount: productAmount,  
@@ -66,5 +136,32 @@ export const addToCart = (req, res) => {
         console.log(err.message);
     }
 
+}
+
+//params -> userId, 
+export const checkout = (req, res) => {
+    let filePath = $`../../cartList.json`;
+    let cartList = readJsonFile(filePath);
+    try {
+        let userCartIndex = cartList.findIndex(cart => cart.userId==req.userId);
+        if(userCartIndex!=-1){
+            const totalAmount = cartList[userCartIndex].cartAmount;
+            console.log(`Checkout completed! Total amount: $${totalAmount}`);
+
+            let discountId = generateDiscountCode();
+
+            saveOrder(userId, discountId, totalAmount);
+            // Remove the cart from the data array
+            cartList.splice(userCartIndex, 1);
+
+            writeJsonFile(filePath, cartList);
+        }
+        else{
+            console.log("No item present in cart");
+        }
+    } catch (error) {
+        console.log(error.message);
+        
+    }
 }
 

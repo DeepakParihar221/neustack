@@ -7,6 +7,8 @@ const router = express.Router();
 router.get('/test', test);  
 
 router.post('/addtocart', addToCart);
+router.post('/checkout', checkout);
+router.post('/generateDiscountCode', generateDiscountCode);
 
 
 export default router ;
