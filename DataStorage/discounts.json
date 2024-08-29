@@ -3,5 +3,135 @@
         "discountId": 101,
         "discountCode": "ABC100",
         "userId": 101
+    },
+    {
+        "discountId": 102,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 103,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 104,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 105,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 106,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 107,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 108,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 109,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 110,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 111,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 112,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 113,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 114,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 115,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 116,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 117,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 118,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 119,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 120,
+        "discountCode": "A4FC495D",
+        "userId": 101
+    },
+    {
+        "discountId": 121,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 122,
+        "discountCode": "5993BEBF",
+        "userId": 101
+    },
+    {
+        "discountId": 123,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 124,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 125,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 126,
+        "discountCode": "",
+        "userId": 101
+    },
+    {
+        "discountId": 127,
+        "discountCode": "9D2D2C49",
+        "userId": 101
     }
 ]

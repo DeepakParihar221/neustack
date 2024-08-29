@@ -1,13 +1,1 @@
-[
-    {
-        "cartId": 101,
-        "userId": 101,
-        "cartAmount": 100,
-        "products":[
-            {
-            "productId": 101,
-            "quantity":1
-            }
-        ]
-    }
-]
+[]
