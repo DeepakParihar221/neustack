@@ -2,7 +2,28 @@
     {
         "productId": 101,
         "productName": "Bag",
-        "price": 100,
+        "price": 50,
+        "inStock": 83,
+        "descrption": ""
+    },
+    {
+        "productId": 102,
+        "productName": "Shoes",
+        "price": 400,
+        "inStock": 100,
+        "descrption": ""
+    },
+    {
+        "productId": 103,
+        "productName": "Mobile Phone",
+        "price": 1099,
+        "inStock": 83,
+        "descrption": ""
+    },
+    {
+        "productId": 104,
+        "productName": "Refridgerator",
+        "price": 1549,
         "inStock": 83,
         "descrption": ""
     }
