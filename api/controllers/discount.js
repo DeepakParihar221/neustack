@@ -1,7 +1,7 @@
 import {readJsonFile, writeJsonFile} from './cart';
 import { v4 as uuidv4 } from "uuid";
 
-// Function to generate a discount code
+
 //params -> userId
 export const generateDiscountCode = (req, res) => {
     let discountCode = generateDiscountCodeMethod(req.body.userId);

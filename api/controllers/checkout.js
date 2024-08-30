@@ -1,7 +1,7 @@
 import {readJsonFile, writeJsonFile} from './cart'
 import {generateDiscountCodeMethod} from './discount'
 
-//params -> userId, 
+//params -> userId 
 export const checkout = (req, res) => {
     let filePath = `./DataStorage/cartList.json`;
     let cartList = readJsonFile(filePath);
@@ -13,12 +13,12 @@ export const checkout = (req, res) => {
             //generate the discountCode if order is eligible
             let discountCode = generateDiscountCodeMethod(req.body.userId);
 
-            saveOrder(req.body.userId, discountCode, totalAmount, cartList[userCartIndex].products);
+            let order = saveOrder(req.body.userId, discountCode, totalAmount, cartList[userCartIndex].products);
             // Remove the cart from the data array
-            let response = cartList[userCartIndex];
             cartList.splice(userCartIndex, 1);
             writeJsonFile(filePath, cartList);
-            res.json(response);
+
+            res.json(order);
         }
         else{
             res.json({message: "No item present in cart"})
@@ -52,6 +52,7 @@ function saveOrder(userId, discountCode, orderAmount,products){
         orderList.push(order);
         if(orderList)
             writeJsonFile(filePath, orderList);
+        return order
     }
     catch(err){
         console.log(err.message);

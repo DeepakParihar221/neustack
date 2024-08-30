@@ -9,9 +9,15 @@ const router = express.Router();
 
 router.get('/test', test);  
 
+//req params -> userId, productId, productAmount
 router.post('/addtocart', addToCart);
+
+//params -> userId 
 router.post('/checkout', checkout);
+
+//params -> userId
 router.post('/generateDiscountCode', generateDiscountCode);
-router.post('/getDetails',getDetails);
+
+router.get('/getDetails',getDetails);
 
 export default router ;
