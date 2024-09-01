@@ -23,14 +23,20 @@ Make sure you have the following software installed on your machine:
    git clone https://github.com/DeepakParihar221/neustack.git
 2. Navigate to the repo and open it in VS Code
 
-3.Open terminal and "npm install" command to install all the dependencies
+3.Open terminal use below command to install all the dependencies
+   ```bash
+   npm install
+   ```
+4.To run the project
+   ```bash
+   npm start
+   ```
+5.To test the testcases
+   ```bash
+   npm test
+   ```
 
-4.To run the project, use "npm start" 
-
-5.To test the testcases, use "npm test" 
-
-
-## NOTE:- Postman collection is also attached in the folder please remove from the folder once cloned the project which can be used to check the response of the APIs.
+### NOTE:- Postman collection is also attached in the folder please remove from the folder once cloned the project which can be used to check the response of the APIs.
 
 
 
