@@ -67,7 +67,7 @@ export const addToCart = (req, res) => {
 
 
 // Function to read JSON file
-function readJsonFile(filePath) {
+export function readJsonFile(filePath) {
     try {
         const data = fs.readFileSync(filePath, 'utf8');
         return JSON.parse(data);
@@ -78,7 +78,7 @@ function readJsonFile(filePath) {
 }
 
 // Function to write to JSON file
-function writeJsonFile(filePath, data) {
+export function writeJsonFile(filePath, data) {
     try {
         fs.writeFileSync(filePath, JSON.stringify(data, null, 4), 'utf8');
         console.log('File successfully updated!');
@@ -88,6 +88,3 @@ function writeJsonFile(filePath, data) {
 }
 
 
-
-module.exports = readJsonFile;
-module.exports = writeJsonFile;

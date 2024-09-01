@@ -1,5 +1,5 @@
-import {readJsonFile, writeJsonFile} from './cart'
-import {generateDiscountCodeMethod} from './discount'
+import {readJsonFile, writeJsonFile} from './cart.js'
+import {generateDiscountCodeMethod} from './discount.js'
 
 //params -> userId 
 export const checkout = (req, res) => {

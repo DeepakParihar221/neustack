@@ -1,4 +1,4 @@
-import {readJsonFile, writeJsonFile} from './cart';
+import {readJsonFile, writeJsonFile} from './cart.js';
 
 export const getDetails = (req,res) => {
     let filePath = `./DataStorage/orders.json`;

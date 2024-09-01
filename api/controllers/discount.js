@@ -1,4 +1,4 @@
-import {readJsonFile, writeJsonFile} from './cart';
+import {readJsonFile, writeJsonFile} from './cart.js';
 import { v4 as uuidv4 } from "uuid";
 
 
@@ -26,13 +26,14 @@ function getOrderCount() {
     }
 }
 
-function generateDiscountCodeMethod(userId){
+export function generateDiscountCodeMethod(userId){
+    let discountCode = "";
     try{
         //Count the number of current order to check if order is eligible for discount
         let count = getOrderCount();
         let filePath = `./DataStorage/discounts.json`;
         const discountList = readJsonFile(filePath);
-        let discountCode = "";
+        discountCode = "";
         //assuming n=5, so for every 5th order,user gets discountCode
         if(count%5===0){
             discountCode= uuidv4().substring(0, 8).toUpperCase(); // Example: 'E5F8A2D4'
@@ -50,6 +51,6 @@ function generateDiscountCodeMethod(userId){
         return discountCode;
     }
     catch(err){
-        console.log(err.message);
+        return "";
     }
 }
